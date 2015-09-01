@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/preloadjs-0.6.1.min.js"></script>
+    <style>
+        .image{
+            max-width: 320px;
+            max-height: 240px;
+            border: 1px solid #555;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <img class="image" id="b1" />
+    <img class="image" id="b2" />
+    <img class="image" id="b3" />
+    <script>
+        var preload;
+        preload=new createjs.LoadQueue(false,"image/");
+
+        var plugin={
+            getPreloadHandlers:function(){
+                return{
+                    types:["image"],
+                    callback:function(loadItem, queue){
+                        var id= loadItem.src.toLowerCase().split("/").pop().split(".")[0];
+                        var img=document.getElementById(id);
+                        img.src= loadItem.src;
+                    }
+                }
+            }
+        }
+
+        preload.installPlugin(plugin);
+        preload.loadManifest([
+                "b1.png",
+                "b2.png",
+                "b3.png",
+                "b5.png"
+        ]);
+    </script>
+</body>
+</html>

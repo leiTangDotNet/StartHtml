@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/easeljs-0.8.1.min.js"></script>
+</head>
+<body>
+    <div id="div1" style="background-color: aqua; width:200px;height: 200px;">
+        <button id="btn" width="100px" height="50px" onclick="alert('hello')">button</button>
+    </div>
+
+    <canvas id="gameview" width="960px" height="500px"></canvas>
+    <script>
+        var canvas,stage,container;
+        canvas=document.getElementById("gameview");
+        stage = new createjs.Stage(canvas);
+        container=new createjs.Container();
+        stage.addChild(container);
+
+        container.x=100;
+
+        var content =new createjs.DOMElement("div1");
+        container.addChild(content);
+
+        stage.update();
+    </script>
+
+</body>
+</html>

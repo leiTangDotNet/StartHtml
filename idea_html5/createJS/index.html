@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/easeljs-0.8.1.min.js"></script>
+    <script>
+        function ChildContainer(){
+            var Rect =new createjs.Shape();
+            Rect.graphics.beginFill("#ff0000");
+            Rect.graphics.drawRect(0,0,10,10);
+            Rect.graphics.endFill();
+            var text= new createjs.Text("1","30px Arial","#ffffff");
+
+            this.addChild(Rect);
+            this.addChild(text);
+        }
+        ChildContainer.prototype=new createjs.Container();
+
+        function Cricle(){
+            createjs.Shape.call(this);
+
+            this.setColor =function(color){
+                this.graphics.beginFill(color);
+                this.graphics.drawCircle(50,50,50);
+                this.graphics.endFill();
+            }
+
+            this.setColor("#00ff00");
+        }
+        Cricle.prototype=new createjs.Shape();
+    </script>
+</head>
+<body>
+    <canvas id="gameview" width="400px" height="400px" style="background-color: #ccc;"></canvas>
+
+    <script>
+        var stage= new createjs.Stage("gameview");
+//
+//        var c =new ChildContainer();
+//
+//        var circle=new Cricle();
+//        circle.setColor("#ff0000");
+//        stage.addChild(circle);
+        var gameview = new createjs.Container();
+
+        var Rect =new createjs.Shape();
+        Rect.graphics.beginFill("#ff0000");
+        Rect.graphics.drawRect(0,0,100,100);
+        gameview.addChild(Rect);
+
+        stage.addChild(gameview);
+
+        stage.update();
+//
+//        Rect.addEventListener("click",function(e){
+//            alert("click the rect:"+ e.localX+","+ e.localY);
+//        })
+        Rect.addEventListener("dblclick",function(e){
+            alert("double click the rect:"+ e.localX+","+ e.localY);
+        })
+
+        var speedX=10;
+        createjs.Ticker.setFPS(5);
+        createjs.Ticker.addEventListener("tick",function(e){
+
+            if(Rect.x<=0){
+                speedX=Math.abs(speedX);
+            }
+            else if(Rect.x>=300){
+                speedX=-Math.abs(speedX);
+            }
+            Rect.x+=speedX;
+            stage.update();
+        })
+
+    </script>
+</body>
+</html>

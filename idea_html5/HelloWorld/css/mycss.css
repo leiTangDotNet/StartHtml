@@ -1,0 +1,87 @@
+h1,h2{
+    color:blue;
+}
+
+body{
+    color: black;
+    /*
+    background-image: url("../image/cssbg.png");
+    background-repeat: no-repeat;
+    background-position: 10% 10%;
+    */
+}
+
+li strong{
+    color:orange;
+}
+
+#divid{
+    background-color: darkgreen;
+    color: cornflowerblue;
+    width: 200px;
+    height: 100px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px red;
+    padding: 100px;
+    margin: 100px;
+}
+#divid a{
+    color:red;
+}
+
+
+#divid1{
+    background-color: darkgreen;
+    color: cornflowerblue;
+    width: 200px;
+    height: 100px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px red;
+    padding: 100px;
+    margin: 50px;
+}
+#divid1 a{
+    color:red;
+}
+
+
+.pclass{
+    color:red;
+    font-size: 18px;
+}
+
+[title]{
+    color: orange;
+}
+[title=te]{
+    color:red;
+}
+
+#tb th ,#tb td{
+    border: 1px solid blue;
+    border-style: dashed;
+    border-top-style: solid;
+    text-align: center;
+    padding: 100px;
+}
+#tb{
+    width:400px;
+    border-collapse: collapse;
+}
+
+
+#tb th{
+    background-color: orange;
+}
+
+#tb tr.alt td{
+    background-color: cornflowerblue;
+    color:white;
+}
+
+.pborder{
+    outline-style;
+    outline-color: cornflowerblue;
+}

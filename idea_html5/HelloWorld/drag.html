@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+        }
+        #box1{
+            float: left;
+            background-color: #cccccc;
+        }
+        #box2{
+            float: left;
+            background-color:aquamarine;
+        }
+    </style>
+
+    <script>
+        var divBox1;
+        var divBox2;
+        var divMsg;
+        var img1;
+        window.onload=function(){
+            divBox1=document.getElementById("box1");
+            divBox2=document.getElementById("box2");
+            divMsg=document.getElementById("msg");
+            img1=document.getElementById("img1");
+            /*
+            divBox.ondragenter=function(e){
+                showObj(e);
+            }*/
+
+            divBox1.ondragover= function(e){
+                e.preventDefault();
+            }
+            divBox2.ondragover= function(e){
+                e.preventDefault();
+            }
+
+            img1.ondragstart=function(e){
+                e.dataTransfer.setData("imgId","img1");
+            }
+
+            divBox1.ondrop=dropImageHander;
+            divBox2.ondrop=dropImageHander;
+
+
+        }
+
+
+        function dropImageHander(e){
+            showObj(e);
+            e.preventDefault();
+
+            var img=document.getElementById(e.dataTransfer.getData("imgId"));
+            e.target.appendChild(img);
+        }
+
+        function showObj(obj){
+            var str="";
+            for(var k in obj){
+                str+= k+":"+obj[k]+"<br />";
+            }
+            divMsg.innerHTML=str;
+        }
+
+        function dragImgToDiv(){
+            var img = document.getElementById("img1");
+            var div=document.getElementById("box1");
+            div.appendChild(img);
+        }
+    </script>
+</head>
+<body>
+    <div id="box1" class="box"></div>
+    <div id="box2" class="box"></div>
+    <img id="img1" src="image/b2.png" />
+    <div id="msg"></div>
+    <button onclick="dragImgToDiv()">drag in div</button>
+</body>
+</html>

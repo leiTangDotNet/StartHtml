@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p id="p1" name="pn">hello</p>
+    <p id="p2" name="pn">hello</p>
+    <p id="p3" name="pn">hello</p>
+    <p id="p4" name="pn">hello</p>
+    <ul>
+        <li>1a</li>
+        <li>1b</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+        <li>1c</li>
+    </ul>
+    <a id="aid" title="get a propery">hi</a>
+
+    <div id="div1">
+        <p id="pid1">pid</p>
+    </div>
+    <script>
+        function getName(){
+            var count=document.getElementsByTagName("p");
+            alert(count.length);
+
+            var p=count[2];
+            p.innerHTML="hi";
+        }
+
+        function getAttr(){
+            var anode=document.getElementById("aid");
+            var attr=anode.getAttribute("id");
+            alert(attr);
+        }
+        function setAttr(){
+            var anode=document.getElementById("aid");
+            anode.setAttribute("title","set a title");
+            var attr=anode.getAttribute("title");
+            alert(attr);
+        }
+
+        function getchildNode(){
+            var childnode= document.getElementsByTagName("ul")[0].childNodes;
+
+            alert(childnode.length);
+            alert(childnode[1].innerHTML);
+        }
+
+        function getParentNode(){
+            var parent=document.getElementById("pid1").parentNode;
+            alert(parent.nodeName);
+        }
+
+        function createNode(){
+            var div  = document.getElementById("div1");
+            var input =document.createElement("input");
+            input.type="button";
+            input.value="click";
+            div.appendChild(input);
+        }
+
+        function addNode(){
+            var div  = document.getElementById("div1");
+            var p1= document.getElementById("pid1");
+            var p2=document.createElement("p");
+            p2.innerHTML="this is insert p";
+            div.insertBefore(p2,p1);
+
+            div.removeChild(div.childNodes[2]);
+        }
+
+        function getSize(){
+            var width =document.documentElement.scrollWidth;
+            var height =document.documentElement.scrollHeight;
+            alert(width+","+height);
+        }
+
+        getSize();
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var serverData,statusDiv;
+        var SERVER_URL="http://localhost/MyService/index.php";
+        window.onload=function(){
+            serverData =document.getElementById("divServer");
+            statusDiv =document.getElementById("divStatus");
+            startListenServer();
+        }
+
+        function startListenServer(){
+            var es =new EventSource(SERVER_URL);
+            es.onopen=openHandder;
+            es.onerror=errorHander;
+            es.onmessage=messageHander;
+        }
+
+        function openHandder(e){
+            statusDiv.innerHTML="Server Open";
+        }
+        function errorHander(e){
+            statusDiv.innerHTML="Server Err";
+        }
+        function messageHander(e){
+            serverData.innerHTML = e.data;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Status:</h1>
+    <div id="divStatus"></div>
+    <h1>Server Data:</h1>
+    <div id="divServer"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/easeljs-0.8.1.min.js"></script>
+</head>
+<body>
+    <canvas id="gameview" width="500px" height="500px"></canvas>
+    <script>
+        var stage=new createjs.Stage("gameview");
+        var container=new createjs.Container();
+        var bitmap=new createjs.Bitmap("image/b5.png");
+        bitmap.x=100;
+        bitmap.y=100;
+        bitmap.scaleX=0.5;
+        bitmap.scaleY=0.5;
+        container.addChild(bitmap);
+        stage.addChild(container);
+
+        createjs.Ticker.addEventListener("tick",function(){
+            stage.update();
+        })
+    </script>
+</body>
+</html>

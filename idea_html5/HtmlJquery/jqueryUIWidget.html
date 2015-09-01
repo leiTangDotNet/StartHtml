@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/jquery-2.1.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <link href="css/jquery-ui.min.css" type="text/css" rel="stylesheet">
+
+    <script>
+        $(document).ready(function(){
+            $("#accordion").accordion();
+
+            var autoArr=["ime","lee","css","javascript","wendy","java"];
+            $("#tags").autocomplete({
+                source:autoArr
+            })
+
+            $("#datepicker").datepicker();
+            $("#btndate").button();
+
+
+            $("#btndialog").button();
+            $("#btndialog").on("click",function(){
+                $("#div1").dialog();
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <p>this is a dialog</p>
+    </div>
+    <button id="btndialog">dialog</button>
+
+    <div id="accordion">
+        <h3>option 1</h3>
+        <div>
+            <p>
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello   hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+            </p>
+        </div>
+        <h3>option 1</h3>
+        <div>
+            <p>
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+            </p>
+        </div>
+        <h3>option 1</h3>
+        <div>
+            <p>
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+            </p>
+        </div>
+        <h3>option 1</h3>
+        <div>
+            <p>
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+            </p>
+        </div>
+        <h3>option 1</h3>
+        <div>
+            <p>
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+            </p>
+        </div>
+        <h3>option 1</h3>
+        <div>
+            <p>
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
+            </p>
+        </div>
+    </div>
+    <p>datetimpck</p>
+    <p>Date:<input type="text" id="datepicker"></p>
+    <a href="#" id="btndate">button</a>
+    <p>AutoComple</p>
+    <label for="tags">Tags:</label>
+    <input id="tags" type="text" />
+
+</body>
+</html>

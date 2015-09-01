@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/easeljs-0.8.1.min.js"></script>
+</head>
+<body>
+    <canvas id="gameview" width="500px" height="500px" style="background-color: #cccccc"></canvas>
+    <script>
+        var stage=new createjs.Stage("gameview");
+        var text=new createjs.Text("hello","36px Arial","#777");
+        stage.addChild(text);
+        stage.update();
+    </script>
+</body>
+</html>

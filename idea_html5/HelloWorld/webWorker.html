@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var numDiv;
+        var work=null;
+        window.onload= function () {
+            numDiv=document.getElementById("numDiv");
+
+        }
+
+        function startWork(){
+            if(work){
+                return;
+            }
+            work=new Worker("script/webWorker.js");
+            work.postMessage(5);
+            work.onmessage=function(e){
+                numDiv.innerHTML= e.data;
+            }
+        }
+
+        function stopWork(){
+            if(work){
+                work.terminate();
+                work=null;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="numDiv"></div>
+    <button id="btnStart" onclick="startWork()">start</button>
+    <button id="btnStop" onclick="stopWork()">stop</button>
+</body>
+</html>

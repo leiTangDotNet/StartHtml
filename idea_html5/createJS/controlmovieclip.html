@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/easeljs-0.8.1.min.js"></script>
+    <script src="script/tweenjs-0.6.1.min.js"></script>
+    <script src="script/movieclip-0.8.1.min.js"></script>
+</head>
+<body>
+    <canvas id="gameview" width="500px" height="500px"></canvas>
+    <script>
+        var stage=new createjs.Stage("gameview");
+
+        createjs.Ticker.setFPS(10);
+        createjs.Ticker.addEventListener("tick",stage);
+
+        var mc=new createjs.MovieClip(null,0,true,{start:50,stop:0});
+        stage.addChild(mc);
+
+        var state1=new createjs.Shape();
+        state1.graphics.beginFill("#999999").drawCircle(0,100,30);
+        var state2=new createjs.Shape();
+        state2.graphics.beginFill("#555555").drawCircle(0,100,30);
+
+        mc.timeline.addTween(createjs.Tween.get(state1).to({x:0}).to({x:500},100).to({x:0},100));
+        mc.timeline.addTween(createjs.Tween.get(state2).to({x:500}).to({x:0},100).to({x:500},100));
+
+        mc.gotoAndPlay("start");
+
+    </script>
+</body>
+</html>

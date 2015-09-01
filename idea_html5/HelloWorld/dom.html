@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>dom index</title>
+    <style>
+        .div{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1" class="div">
+        hello
+        <a id="a1" href="http://www.baidu.com">baidu</a>
+        <button id ="btn">onclik</button>
+    </div>
+    <script>
+//        document.getElementById("btn").addEventListener("click",demo2);
+//        document.getElementById("btn").addEventListener("click",demo);
+//        document.getElementById("btn").removeEventListener("click",demo);
+
+        var btn1= document.getElementById("btn");
+        if(btn1.addEventListener){
+            btn1.addEventListener("click",showType);
+        }else if(btn1.attachEvent){
+            btn1.attachEvent("onclick",demo);
+        }else{
+            btn1.onclick=demo;
+        }
+
+document.getElementById("a1").addEventListener("click",showType);
+        document.getElementById("div1").addEventListener("click",demo2);
+
+        function demo(){
+            document.getElementById("div1").innerHTML="hello div";
+        }
+        function demo2(){
+            alert("hello");
+        }
+        function showType(event){
+//            alert(event.type);
+            alert("hell");
+            alert(event.type);
+            event.stopPropagation();
+            event.preventDefault();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var ta;
+        var txt;
+        var btn;
+        var add;
+        var num=0;
+        window.onload=function(){
+            ta = document.getElementById("t1");
+            txt = document.getElementById("txt");
+            btn =document.getElementById("btn");
+            add =document.getElementById("add");
+            if(localStorage.text){
+                ta.value= localStorage.text;
+            }
+            if(sessionStorage.num){
+                num=sessionStorage.num;
+            }
+
+            btn.addEventListener("click",click);
+            add.addEventListener("click",shownum);
+        }
+
+        function click(){
+            localStorage.text = ta.value;
+        }
+
+        function shownum(){
+            num++;
+            txt.innerHTML=num;
+            sessionStorage.num=num;
+        }
+    </script>
+</head>
+<body>
+    <textarea id="t1" style="width:200px; height:200px"></textarea>
+    <br />
+
+    <button id="btn">save</button>
+    <br />
+    <span id="txt">0</span>
+    <button id="add">add</button>
+</body>
+</html>

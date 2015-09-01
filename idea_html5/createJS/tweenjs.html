@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/easeljs-0.8.1.min.js"></script>
+    <script src="script/tweenjs-0.6.1.min.js"></script>
+</head>
+<body>
+    <canvas id="gameview" width="400px" height="400px" style="background-color: #cccccc"></canvas>
+    <script>
+        var stage=new createjs.Stage("gameview");
+        stage.x=100;
+        stage.y=100;
+        var circle=new createjs.Shape();
+        circle.graphics.beginFill("#FF0000").drawCircle(0,0,50);
+        stage.addChild(circle);
+
+        createjs.Tween.get(circle,{loop:true}).wait(1000).to({scaleX:0.2,scaleY:0.2})
+                .wait(1000).to({scaleX:1,scaleY:1});
+        createjs.Ticker.setFPS(20);
+        createjs.Ticker.addEventListener("tick",stage);
+    </script>
+</body>
+</html>

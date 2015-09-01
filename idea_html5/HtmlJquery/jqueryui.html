@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/jquery-2.1.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <link href="css/jquery-ui.min.css" type="text/css" rel="stylesheet">
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            height: 1000px;
+        }
+
+        .ui-selected{
+            background-color: #1c94c4;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#a_btn").button();
+
+            $("#div1").draggable();
+
+            $("#div2").droppable();
+            $("#div2").bind("drop",function(event,ui){
+                $("#div2").text("drop div1");
+            })
+
+            $("#div3").resizable();
+
+            $("#btn1").button();
+
+            $("#select").selectable();
+
+            $("#btn1").on("click",function(){
+                if($("#right").hasClass("ui-selected")){
+                    alert("you are right");
+                }
+            })
+
+
+            $("#sort").sortable();
+        });
+    </script>
+</head>
+<body>
+    <p>button</p>
+    <a href="http://www.baidu.com" id="a_btn">baidu</a>
+    <p>dragable</p>
+    <div id="div1" style="width: 100px;height:100px; border:1px solid red;"></div>
+    <p>dropable</p>
+    <div id="div2" style="width: 200px;height:200px; border:1px solid red;"></div>
+    <p>resizeable</p>
+    <div id="div3" style="width: 100px;height:100px; border:2px solid cadetblue;"></div>
+    <p>selectabke</p>
+    <strong>choose a selection</strong>
+    <ul id="select">
+        <li id="right">A,1</li>
+        <li>B,2</li>
+        <li>C,3</li>
+    </ul>
+    <a href="#" id="btn1">choose</a>
+    <p>sortable</p>
+    <ul id="sort">
+        <li>apple</li>
+        <li>orange</li>
+        <li>banner</li>
+    </ul>
+</body>
+</html>

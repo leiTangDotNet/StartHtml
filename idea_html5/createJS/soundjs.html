@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/soundjs-0.6.1.min.js"></script>
+</head>
+<body>
+    <div>
+        <h1 id="status">status</h1>
+    </div>
+    <script>
+        var displayStatus=document.getElementById("status");
+        var src="1.mp3";
+        createjs.Sound.alternateExtensions=["mp3"];
+        createjs.Sound.addEventListener("fileload",playSound);
+        createjs.Sound.registerSound(src);
+
+        displayStatus.innerHTML="Waitting for load to complete.."
+
+        function playSound(event){
+            soundInstance=createjs.Sound.play(event.src);
+            displayStatus.innerHTML="Playing source is:"+event.src;
+        }
+    </script>
+</body>
+</html>

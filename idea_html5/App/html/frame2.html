@@ -1,0 +1,228 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>Hello APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<style>
+			html, body {
+				background-color: #fff;
+			}
+			#wrap {
+				background-color: #fff;
+				padding: 0 1em;
+			}
+			/*box_middle*/
+			#main .box_middle_bottom {
+				padding: 0 1em;
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				display: -webkit-box;
+				display: flex;
+				-webkit-box-orient: vertical;
+				-webkit-flex-direction: column;
+				padding-bottom: 70px;
+			}
+			.row_middle_list {
+				margin-top: 4px;
+				width: 100%;
+				border-bottom: 1px solid #DDDFE3;
+			}
+			.row_middle_li {
+				height: auto;
+				width: 100%;
+				background-color: #e3e3e3;
+				margin: 2px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			.row {
+				background-color: #fff;
+				overflow: hidden;
+				height: auto;
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			.col {
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				flex: 1;
+				position: relative;
+			}
+			.brOne {
+				background-color: #e0e0e0;
+				border-radius: 4px;
+				width: 80px;
+				height: 100%;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			.brTwo {
+				margin-left: 84px;
+				height: auto;
+				overflow: hidden;
+			}
+			.brOne .OneInfo {
+				width: 100%;
+				vertical-align: middle;
+				text-align: center;
+			}
+
+
+			.brOne .OneInfo  .title {
+				font-size: 18px;
+				margin-top: 5px;
+			}
+			.brOne .OneInfo .subtitle {
+				font-size: 12px;
+				color: #666;
+			}
+			.brOne .logocover {
+				text-align: center;
+				margin-top: 10px;
+			}
+
+			.brOne .logocover img {
+				width: 36px;
+			}
+
+			.brTwo p:after {
+				content: "专题";
+				background-color: #55abce;
+				border: 1px solid #55abce;
+				border-radius: 4px;
+				color: #fff;
+				font-size: 12px;
+				padding: 2px 6px;
+				float: right;
+				height: 14px;
+				line-height: 14px;
+			}
+			.box_middle_list {
+				margin-top: 0px;
+				width: 100%;
+			}
+			.box_middle_li {
+				height: 30px;
+				width: 100%;
+				background-color: #fff;
+				margin: 1px auto;
+				display: -webkit-box;
+				-webkit-box-orient: horizontal;
+				border-top: 1px solid #DDDFE3;
+				/**/
+				position: relative;
+				overflow: hidden;
+			}
+
+			.box_middle_li .li_div {
+				text-align: center;
+				color: #9B9B9B;
+				height: 100%;
+			}
+			.box_middle_li .li_1 {
+				width: 70px;
+				line-height: 30px;
+				font-size: 14px;
+				color:forestgreen;
+			}
+			.box_middle_li .li_2 {
+				width: 45px;
+			}
+			.box_middle_li .li_2 span {
+				width: 45px;
+				font-size:10px;
+				line-height: 12px;
+				color: forestgreen;
+			}
+			.box_middle_li .li_3 {
+				width: 80px;
+				line-height: 30px;
+				font-size: 14px;
+				color: forestgreen;
+			}
+			.box_middle_li .li_4 {
+				width: 65px;
+			}
+			.box_middle_li .li_4 span {
+				 width: 60px;
+				 text-align: left;
+				 font-size:10px;
+				 line-height: 12px;
+				 color:lightgreen;
+			 }
+			.box_middle_li .li_4 span strong {
+				color:forestgreen;
+				margin-right: 4px;
+			}
+			.box_middle_li span+span {
+				position: relative;
+				top: -2px;
+			}
+
+		</style>
+	</head>
+	<body ontouchstart="">
+		<div id="wrap">
+			<div class="box_middle_bottom">
+				<ul class="row_middle_list">
+						<li class="row_middle_li">
+							<div class="row">
+								<div class="col brOne" tapmode="presshover">
+									<div class="OneInfo">
+										<div class="title">
+											第1周
+										</div>
+										<div class="subtitle">
+											共3次
+										</div>
+									</div>
+									<div class="logocover">
+										<img src="../image/startrun1.png" alt="">
+									</div>
+								</div>
+								<div class="col brTwo">
+									<ul class="box_middle_list">
+										<li class="box_middle_li">
+											<div class="li_1 li_div">第一节</div>
+											<div class="li_2 li_div">
+												<span>18:00</span><span>18:42</span>
+											</div>
+											<div class="li_3 li_div">00:42:15</div>
+											<div class="li_4 li_div">
+												<span><strong>3.0</strong>km</span><span><strong>312</strong>kcal</span>
+											</div>
+										</li>
+										<li class="box_middle_li">
+											<div class="li_1 li_div">第一节</div>
+											<div class="li_2 li_div">
+												<span>18:00</span><span>18:42</span>
+											</div>
+											<div class="li_3 li_div">00:42:15</div>
+											<div class="li_4 li_div">
+												<span><strong>3.0</strong>km</span><span><strong>312</strong>kcal</span>
+											</div>
+										</li>
+										<li class="box_middle_li">
+											<div class="li_1 li_div">第一节</div>
+											<div class="li_2 li_div">
+												<span>18:00</span><span>18:42</span>
+											</div>
+											<div class="li_3 li_div">00:42:15</div>
+											<div class="li_4 li_div">
+												<span><strong>3.0</strong>km</span><span><strong>312</strong>kcal</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</body>
+</html>

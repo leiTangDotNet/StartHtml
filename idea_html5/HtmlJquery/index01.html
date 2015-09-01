@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+//                var txt1=$("#test").text();
+//                alert(txt1);
+//
+//                var txt2=$("#test").html();
+//                alert(txt2);
+//                var txt1=$("#test").attr("style");
+//                alert(txt1);
+//                $("#test").text("hi,this ia a new p")
+//                $("#test").html("<a href='http:www.baidu.com'>hi,this ia a new p</a>")
+//                $("#t1").val("hello");
+//                $("#test").attr({
+//                    "style":"color:orange;",
+//                    "name":"ptest"
+//                });
+
+                $("#test").text(function(i,ot){
+                    alert(i+","+ot);
+                    return "this is a function";
+                });
+            });
+
+            $("#btn2").click(function(){
+                $("#p1").append("<p>this is a append p</p>");
+//                $("#p1").prepend("this is a append p");
+            });
+            $("#btn3").click(function(){
+                $("#p1").after("<p>this is a append p</p>");
+            });
+            $("#btn4").click(function(){
+                $("p").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="test" style="color: red;">this is a p<a>this is a </a></p>
+    <input type="text" id="t1" value="hel" />
+    <button id="btn1">button</button>
+    <br/>
+    <p id="p1">this is p1</p>
+    <p id="p2">this is p2</p>
+    <button id="btn2">click</button>
+    <button id="btn3">click</button>
+    <button id="btn4">delete</button>
+</body>
+</html>

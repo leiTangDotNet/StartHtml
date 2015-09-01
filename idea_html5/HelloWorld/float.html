@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>float css style</title>
+    <style type="text/css">
+
+        .contianer{
+            width: 400px;
+            height: 300px;
+            background-color: gray;
+        }
+        #fd{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        #sd{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+        #td{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            float: left;
+        }
+        #text{
+            clear: both;
+        }
+
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            list-style: none;
+        }
+        #divcontent{
+            width: 300px;
+            heifht:auto;
+            margin: 20px auto;
+        }
+        ul{
+            width: 100px;
+            float: left;
+        }
+        li{
+            height: 100px;
+        }
+        p{
+            clear: left;
+        }
+
+        p.p1{
+            color:red;
+        }
+
+        .p1.p2{
+            font-style: italic;
+        }
+
+        p>strong{
+            color:red;
+        }
+        h1+p{
+            color:blue;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contianer">
+        <div id="fd">
+
+        </div>
+        <div id="sd">
+
+        </div>
+        <div id="td">
+
+        </div>
+    </div>
+    <div id="divcontent">
+        <ul>
+            <li><img src="image/t1.png"></li>
+            <li><img src="image/t1.png"></li>
+            <li><img src="image/t1.png"></li>
+        </ul>
+        <ul>
+            <li><img src="image/t1.png"></li>
+            <li><img src="image/t1.png"></li>
+            <li><img src="image/t1.png"></li>
+        </ul>
+        <ul>
+            <li><img src="image/t1.png"></li>
+            <li><img src="image/t1.png"></li>
+            <li><img src="image/t1.png"></li>
+        </ul>
+    </div>
+    <p class="p1 p2">this is lable</p>
+    <p> this is a <strong>web</strong> page</p>
+    <div>
+        <h1>h1</h1>
+        <p>p</p>
+    </div>
+</body>
+</html>

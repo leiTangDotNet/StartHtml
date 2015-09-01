@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/easeljs-0.8.1.min.js"></script>
+    <script src="script/Event.js"></script>
+    <script src="script/EventDispatcher.js"></script>
+    <script src="script/tweenjs-0.6.1.min.js"></script>
+    <script src="script/Ease.js"></script>
+</head>
+<body>
+    <canvas id="gameview" width="960px" height="500px"></canvas>
+    <script>
+        var canvas;
+        var stage;
+        var circleCount=25;
+        var activeCount=circleCount;
+        var tweens=[];
+
+        canvas= document.getElementById("gameview");
+        stage=new createjs.Stage(canvas);
+
+        for(var i=0;i<circleCount;i++){
+            var circle = new createjs.Shape();
+            circle.graphics.setStrokeStyle(15);
+            circle.graphics.beginStroke("#ff0000");
+            circle.graphics.drawCircle(0,0,(i+1)*4);
+            circle.compositeOperation="lighter";
+
+            var tween=createjs.Tween.get(circle).to({x:300,y:200},(0.5+i*0.04)*1500,createjs.Ease.bounceInOut.call(tweenComplete));
+
+            tweens.push({ref:circle});
+            stage.addChild(circle);
+
+        }
+
+        stage.addEventListener("stagemouseup",handerMouseUp);
+        createjs.Ticker.addEventListener("tick",stage);
+
+        function handerMouseUp(e){
+            for(var i=0;i<circleCount;i++){
+                var ref =tweens[i].ref;
+                createjs.Tween.get(ref,{override:true}).to({x:stage.mouseX,y:stage.mouseY},(0.5+i*0.04)*2000,createjs.Ease.bounceInOut.call(tweenComplete));
+
+            }
+            activeCount=circleCount;
+        }
+
+        function tweenComplete(){
+            activeCount--;
+        }
+    </script>
+</body>
+</html>

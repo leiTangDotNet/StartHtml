@@ -1,0 +1,18 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.style1{
+    width:100px;
+    height: 100px;
+    background-color:lightblue;
+    border:1px solid red;
+    margin:20px;
+    padding: 20px;
+}
+.style2{
+    width:100px;
+    height: 100px;
+    background-color:steelblue;
+}

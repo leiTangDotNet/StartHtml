@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link href="css/jquery.mobile-1.4.5.min.css" type="text/css" rel="stylesheet">
+    <script src="script/jquery-2.1.4.min.js"></script>
+    <script src="script/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-theme="b">
+            <h1>Header</h1>
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="grid">one</a> </li>
+                    <li><a href="#" data-icon="star">two</a> </li>
+                    <li><a href="#" data-icon="gear">three</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main">
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <div class="ui-bar ui-bar-a">hello A</div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar ui-bar-a">hello B</div>
+                </div>
+                <div class="ui-block-c">
+                    <div class="ui-bar ui-bar-a">hello C</div>
+                </div>
+                <div class="ui-block-a">
+                    <div class="ui-bar ui-bar-a">hello A</div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar ui-bar-a">hello B</div>
+                </div>
+                <div class="ui-block-c">
+                    <div class="ui-bar ui-bar-a">hello C</div>
+                </div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <input type="button" data-theme="b" value="button">
+                </div>
+            </div>
+
+            <ul data-role="listview" data-filter="true" data-theme="b" data-insert="true">
+                <li><a href="#">A</a> </li>
+                <li><a href="#">B</a> </li>
+                <li><a href="#">C</a> </li>
+                <li><a href="#">D</a> </li>
+            </ul>
+            <a href="#pp" data-rel="popup" class="ui-btn">popup</a>
+            <div data-role="popup" id="pp">
+                <p> this is a popup </p>
+                <p> this is a popup </p>
+                <p> this is a popup </p>
+                <p> this is a popup </p>
+            </div>
+
+            <div class="ui-field-contain">
+                <select name="select-native-1" id="select-native-1" data-iconpos="left">
+                    <option value="1">this is 1</option>
+                    <option value="2">this is 2</option>
+                    <option value="3" disabled="disabled">this is 3</option>
+                    <option value="4">this is 4</option>
+                </select>
+            </div>
+
+        </div>
+        <div data-role="footer" data-theme="b">
+            <h1>Footer</h1>
+        </div>
+    </div>
+</body>
+</html>

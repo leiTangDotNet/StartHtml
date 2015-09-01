@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            /*$("button").click(function(){
+                $(this).hide();
+            });*/
+
+           /* $("button").dblclick(function(){
+                $(this).hide();
+            });*/
+          /*  $("button").mouseenter(function(){
+                $(this).hide();
+            });*/
+            /*$("button").mouseleave(function(){
+                $(this).hide();
+            });*/
+/*
+            $("#btn").bind("click",clickHandler1);
+            $("#btn").bind("click",clickHandler2);
+
+//            $("#btn").unbind("click");
+            $("#btn").unbind("click",clickHandler1);
+
+            */
+
+            $("body").bind("click",bodyHander)
+            $("div").bind("click",divHander)
+        });
+
+        function clickHandler1(e){
+            console.log("clickhander1");
+        }
+
+        function clickHandler2(e){
+            console.log("clickhander2");
+        }
+        function bodyHander(e){
+            console.log("body:"+e);
+        }
+        function divHander(e){
+            console.log("div:"+e);
+            e.stopPropagation();
+        }
+    </script>
+</head>
+<body>
+    <button>clcik</button>
+    <button id="btn">button</button>
+    <div style="width:300px ; height:300px;background-color:aquamarine">
+        <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>a</li>
+        </ul>
+    </div>
+</body>
+</html>
